@@ -65,7 +65,7 @@ def dance_cozmo(robot: cozmo.robot.Robot):
         time.sleep(.3)
     robot.move_lift(2)
     time.sleep(1)
-    
+
     #ACT 5
     for x in range(0, 5): #6
         robot.move_head(10)
@@ -85,16 +85,12 @@ def dance_cozmo(robot: cozmo.robot.Robot):
         robot.drive_straight(cozmo.util.distance_mm(150.0), cozmo.util.speed_mmps(75.0), should_play_anim = False, in_parallel = True)
         time.sleep(2)
         #back-and-forth
-        robot.move_lift(-10)
-        time.sleep(.3)
-        robot.move_lift(10)
-        time.sleep(.3)
-        robot.drive_wheels(-300, 300, duration = 1) #180 degree turn counter-clockwise
-        robot.move_lift(-10)
-        time.sleep(.3)
-        robot.move_lift(10)
-        time.sleep(.3)
-        robot.drive_wheels(300, -300, duration = 1) 
+        for w in range(0, 2):
+            robot.move_lift(-10)
+            time.sleep(.3)
+            robot.move_lift(10)
+            time.sleep(.3)
+            robot.drive_wheels(-300, 300, duration = 1) #180 degree turn counter-clockwise
         #final turn
         robot.move_lift(-10)
         time.sleep(.3)
