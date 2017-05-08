@@ -85,25 +85,23 @@ def dance_cozmo(robot: cozmo.robot.Robot):
     robot.drive_wheels(-150, 150, duration = 1) #90 degree turn counter-clockwise
     time.sleep(1)
 
-    for i in range (0, 1):
+    for i in range (0, 0):
         robot.move_lift(10)
         robot.drive_straight(cozmo.util.distance_mm(150.0), cozmo.util.speed_mmps(50.0), should_play_anim = False, in_parallel = True)
         time.sleep(3)
         #back-and-forth
         robot.move_lift(-10)
         robot.move_lift(10)
-        robot.drive_wheels(-200, 200, duration = .5) #180 degree turn counter-clockwise
-        print ("turn 1")
+        robot.drive_wheels(-100, 100, duration = .5) #180 degree turn counter-clockwise
         time.sleep(2)
-        robot.move_lift(-10)
-        robot.move_lift(10)
-        robot.drive_wheels(-200, 200, duration = .5) #180 degree turn counter-clockwise
-        print ("turn 2")
-        time.sleep(2)
-        robot.move_lift(-10)
-        robot.move_lift(10)
-        robot.drive_wheels(-200, 200, duration = .5) #180 degree turn counter-clockwise
-        print ("turn 3")
-        time.sleep(2)
+        # robot.move_lift(-10)
+        # robot.move_lift(10)
+        # robot.drive_wheels(-200, 200, duration = .5) #180 degree turn counter-clockwise
+        # time.sleep(2)
+        # #final turn
+        # robot.move_lift(-10)
+        # robot.move_lift(10)
+        # robot.drive_wheels(-200, 200, duration = .5) #180 degree turn counter-clockwise
+        # time.sleep(2)
 
 cozmo.run_program(dance_cozmo)
